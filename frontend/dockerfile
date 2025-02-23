@@ -1,0 +1,14 @@
+FROM python:3.9
+
+WORKDIR /frontend
+
+COPY ui.py /frontend/ui.py
+COPY .streamlit/ /frontend/.streamlit/
+
+RUN pip install streamlit requests
+
+EXPOSE 8501
+
+ENTRYPOINT ["streamlit","run"]
+
+CMD ["ui.py", "--server.port=8501", "--server.address=0.0.0.0"]
