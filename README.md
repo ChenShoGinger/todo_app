@@ -34,7 +34,7 @@ git clone https://github.com/ChenShoGinger/todo_app.git
 ```
 
 ```bash
-cd todolist-app
+cd todo_app
 ```
 
 2) **Build the Docker containers**:
