@@ -1,0 +1,18 @@
+FROM python:3.9
+
+WORKDIR /backend
+
+COPY main.py /backend/main.py
+
+COPY mongodb.py /backend/mongodb.py
+
+COPY test.py /backend/test.py
+
+RUN pip install fastapi uvicorn pymongo pytest httpx
+
+EXPOSE 8000
+
+EXPOSE 27017
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--reload"]
+
